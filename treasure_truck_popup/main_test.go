@@ -1,4 +1,4 @@
-package amazon_treasure_truck_popup
+package treasure_truck_popup
 
 import (
 	"testing"

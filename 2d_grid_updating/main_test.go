@@ -1,4 +1,4 @@
-package amazon_2d_grid
+package _d_grid_updating
 
 import (
 	"fmt"
