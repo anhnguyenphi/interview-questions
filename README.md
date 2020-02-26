@@ -1,2 +1,2 @@
 # interview-problems
-My habit to learn algorithms and solve techincal problems
+My habit to learn algorithm and solve techincal problems
