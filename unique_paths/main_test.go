@@ -22,11 +22,11 @@ func step(m, n int, store map[string]int) int {
 
 	var result int
 	if n == 1 {
-		result  = step(m - 1, n, store)
+		result = step(m-1, n, store)
 	} else if m == 1 {
-		result =  step(m, n - 1, store)
+		result = step(m, n-1, store)
 	} else {
-		result = step(m - 1, n, store) + step(m, n - 1, store)
+		result = step(m-1, n, store) + step(m, n-1, store)
 	}
 
 	store[key] = result
@@ -44,8 +44,4 @@ func TestCase1(t *testing.T) {
 
 func TestCase2(t *testing.T) {
 	assert.Equal(t, run(7, 3), 28)
-}
-
-func TestCase3(t *testing.T) {
-	assert.Equal(t, run(51, 9), 28)
 }
