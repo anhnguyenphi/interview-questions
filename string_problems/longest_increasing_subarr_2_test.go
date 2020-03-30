@@ -10,7 +10,7 @@ import (
 
 func lis2BinarySearch(arr []int, l, r, key int) int {
 	for r-l > 1 {
-		m := l + (r+l)/2
+		m := int((r + l) / 2)
 		if arr[m] > key {
 			r = m
 		} else {
@@ -33,7 +33,7 @@ func lis2(arr []int, n int) int {
 			activeList[length] = arr[i]
 			length++
 		} else { // between
-			activeList[lis2BinarySearch(activeList, -1, length-1, arr[i])] = arr[i]
+			activeList[lis2BinarySearch(activeList, 0, length-1, arr[i])] = arr[i]
 		}
 	}
 
@@ -41,9 +41,9 @@ func lis2(arr []int, n int) int {
 }
 
 func TestLIS2_1(t *testing.T) {
-	assert.Equal(t, lis([]int{3, 10, 2, 1, 20}, 5), 3)
+	assert.Equal(t, lis2([]int{3, 10, 2, 1, 20}, 5), 3)
 }
 
 func TestLIS2_2(t *testing.T) {
-	assert.Equal(t, lis([]int{0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15}, 16), 6)
+	assert.Equal(t, lis2([]int{0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15}, 16), 6)
 }
