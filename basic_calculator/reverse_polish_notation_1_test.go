@@ -1,9 +1,10 @@
 package basic_calculator
 
 import (
-	"fannpa/hello/util"
 	"strconv"
 	"testing"
+
+	"github.com/fannpa/interviewquestions/util"
 
 	"github.com/magiconair/properties/assert"
 )

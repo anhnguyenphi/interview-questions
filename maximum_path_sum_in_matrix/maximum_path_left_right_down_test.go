@@ -1,9 +1,10 @@
 package maximum_path_sum_in_matrix
 
 import (
-	"fannpa/hello/util"
 	"math"
 	"testing"
+
+	"github.com/fannpa/interviewquestions/util"
 
 	"github.com/magiconair/properties/assert"
 )
