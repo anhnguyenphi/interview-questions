@@ -1,6 +1,9 @@
 package k_largest_element_in_array
 
-import "fmt"
+import (
+	"github.com/magiconair/properties/assert"
+	"testing"
+)
 
 func findKthLargest(nums []int, k int) int {
 	return quickSort(nums, 0, len(nums)-1, k)
@@ -32,6 +35,6 @@ func quickSort(nums []int, low, high, k int) int {
 	return quickSort(nums, low, pivot-1, k-count)
 }
 
-func main() {
-	fmt.Println(findKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4))
+func TestFindKthLargest(t *testing.T) {
+	assert.Equal(t, findKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4), 4)
 }
