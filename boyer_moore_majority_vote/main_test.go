@@ -3,7 +3,7 @@ package boyer_moore_majority_vote
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link: https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm

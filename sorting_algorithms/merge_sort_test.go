@@ -3,7 +3,7 @@ package sorting_algorithms
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func merge(arr *[]int, left, middle, right int) {

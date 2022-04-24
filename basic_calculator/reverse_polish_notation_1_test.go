@@ -6,7 +6,7 @@ import (
 
 	"github.com/fannpa/interviewquestions/util"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // https://cp-algorithms.com/string/expression_parsing.html

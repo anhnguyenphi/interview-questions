@@ -4,8 +4,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
+
 // link : https://leetcode.com/problems/top-k-frequent-elements/
 // =>  Bucket Sort
 // put the same frequency into a bucket and then loop from max to min frequency, append elements of each bucket to arr,
@@ -46,18 +47,18 @@ func run(arr []int, k int) []int {
 	return tmp[:int(count)]
 }
 
-func TestCase1(t *testing.T)  {
-	assert.Equal(t, run([]int{1,1,1,2,2,3}, 2), []int{1, 2})
+func TestCase1(t *testing.T) {
+	assert.Equal(t, run([]int{1, 1, 1, 2, 2, 3}, 2), []int{1, 2})
 }
 
-func TestCase2(t *testing.T)  {
-	assert.Equal(t, run([]int{1,1,1,2,2,3,3,3}, 2), []int{1, 3})
+func TestCase2(t *testing.T) {
+	assert.Equal(t, run([]int{1, 1, 1, 2, 2, 3, 3, 3}, 2), []int{1, 3})
 }
 
-func TestCase3(t *testing.T)  {
-	assert.Equal(t, run([]int{-1,-1}, 1), []int{-1})
+func TestCase3(t *testing.T) {
+	assert.Equal(t, run([]int{-1, -1}, 1), []int{-1})
 }
 
-func TestCase4(t *testing.T)  {
-	assert.Equal(t, run([]int{5,3,1,1,1,3,73,1}, 2), []int{1, 3})
+func TestCase4(t *testing.T) {
+	assert.Equal(t, run([]int{5, 3, 1, 1, 1, 3, 73, 1}, 2), []int{1, 3})
 }

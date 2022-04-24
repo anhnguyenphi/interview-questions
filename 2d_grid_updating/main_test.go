@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 type node struct {
@@ -14,10 +14,10 @@ type node struct {
 
 func (n node) Neighbours(row, col int) []node {
 	neighbours := []node{
-		{ x: n.x - 1, y: n.y },
-		{ x: n.x + 1, y: n.y },
-		{ x: n.x, y: n.y + 1 },
-		{ x: n.x, y: n.y - 1},
+		{x: n.x - 1, y: n.y},
+		{x: n.x + 1, y: n.y},
+		{x: n.x, y: n.y + 1},
+		{x: n.x, y: n.y - 1},
 	}
 
 	validResult := make([]node, 0)
@@ -36,7 +36,7 @@ func minimumDays(row, col int, nodes [][]int) int {
 	for i := 0; i < row; i++ {
 		for j := 0; j < col; j++ {
 			if nodes[i][j] == 1 {
-				updatedNodes = append(updatedNodes, node{x:i, y:j})
+				updatedNodes = append(updatedNodes, node{x: i, y: j})
 			}
 		}
 	}

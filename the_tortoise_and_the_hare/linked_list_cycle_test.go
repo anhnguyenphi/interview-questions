@@ -3,7 +3,7 @@ package the_tortoise_and_the_hare
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link : https://en.wikipedia.org/wiki/Cycle_detection#Floyd.27s_Tortoise_and_Hare

@@ -3,7 +3,7 @@ package treasure_truck_popup
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 type node struct {
@@ -13,10 +13,10 @@ type node struct {
 
 func (n node) Neighbours(row, col int) []node {
 	neighbours := []node{
-		{ x: n.x - 1, y: n.y },
-		{ x: n.x + 1, y: n.y },
-		{ x: n.x, y: n.y + 1 },
-		{ x: n.x, y: n.y - 1},
+		{x: n.x - 1, y: n.y},
+		{x: n.x + 1, y: n.y},
+		{x: n.x, y: n.y + 1},
+		{x: n.x, y: n.y - 1},
 	}
 
 	validResult := make([]node, 0)
@@ -32,21 +32,21 @@ func (n node) Neighbours(row, col int) []node {
 
 func TestFindNumberOfTruckPopups1(t *testing.T) {
 	assert.Equal(t, 2, findNumberOfTruckPopups(4, 4, [][]int{
-		{1,1,0,0},
-		{0,0,0,0},
-		{0,0,1,1},
-		{0,0,0,0},
+		{1, 1, 0, 0},
+		{0, 0, 0, 0},
+		{0, 0, 1, 1},
+		{0, 0, 0, 0},
 	}))
 }
 func TestFindNumberOfTruckPopups2(t *testing.T) {
-	assert.Equal(t, 7, findNumberOfTruckPopups(7,7, [][]int{
-		{1,0,0,0,0,0,0},
-		{0,1,0,0,0,0,0},
-		{0,0,1,0,0,0,0},
-		{0,0,0,1,0,0,0},
-		{0,0,0,0,1,0,0},
-		{0,0,0,0,0,1,0},
-		{0,0,0,0,0,0,1},
+	assert.Equal(t, 7, findNumberOfTruckPopups(7, 7, [][]int{
+		{1, 0, 0, 0, 0, 0, 0},
+		{0, 1, 0, 0, 0, 0, 0},
+		{0, 0, 1, 0, 0, 0, 0},
+		{0, 0, 0, 1, 0, 0, 0},
+		{0, 0, 0, 0, 1, 0, 0},
+		{0, 0, 0, 0, 0, 1, 0},
+		{0, 0, 0, 0, 0, 0, 1},
 	}))
 }
 func findNumberOfTruckPopups(row, col int, data [][]int) int {

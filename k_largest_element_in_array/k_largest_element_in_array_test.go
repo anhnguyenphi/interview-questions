@@ -1,7 +1,7 @@
 package k_largest_element_in_array
 
 import (
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 

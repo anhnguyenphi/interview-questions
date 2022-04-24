@@ -3,7 +3,7 @@ package dynamic_programming
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // https://www.geeksforgeeks.org/coin-change-dp-7/

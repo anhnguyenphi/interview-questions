@@ -3,7 +3,7 @@ package selling_stock
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func maxProfit2(prices []int) int {

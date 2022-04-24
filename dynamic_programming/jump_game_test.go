@@ -3,7 +3,7 @@ package dynamic_programming
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func maxInt(a, b int) int {

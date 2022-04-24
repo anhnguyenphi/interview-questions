@@ -4,8 +4,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
+
 // link : https://leetcode.com/problems/minimum-path-sum/
 
 func minPathSum(grid [][]int) int {
@@ -22,15 +23,15 @@ func minPathSum(grid [][]int) int {
 				}
 			} else {
 				if j == 0 {
-					grid[i][j] = grid[i - 1][j] + val
+					grid[i][j] = grid[i-1][j] + val
 				} else {
-					grid[i][j] = int(math.Min(float64(grid[i - 1][j] + val), float64(grid[i][j - 1] + val)))
+					grid[i][j] = int(math.Min(float64(grid[i-1][j]+val), float64(grid[i][j-1]+val)))
 				}
 			}
 		}
 	}
 
-	return grid[n - 1][m - 1]
+	return grid[n-1][m-1]
 }
 
 func TestCase1(t *testing.T) {

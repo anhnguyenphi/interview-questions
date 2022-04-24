@@ -3,7 +3,7 @@ package palindrome
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link: https://leetcode.com/problems/palindromic-substrings/

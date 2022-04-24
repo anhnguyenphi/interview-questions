@@ -3,7 +3,7 @@ package merge_k_sorted_arr
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 type minHeap struct {

@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/coin-change/

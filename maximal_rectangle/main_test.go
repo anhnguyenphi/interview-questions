@@ -5,7 +5,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link: https://leetcode.com/problems/maximal-rectangle/
@@ -57,13 +57,13 @@ func maximalSubSquare(matrix [][]string) int {
 	N := len(matrix)
 	M := len(matrix[0])
 	max := 0
-	for i := N - 1; i > 0 ; i-- {
-		for j := M - 1; j > 0 ; j-- {
+	for i := N - 1; i > 0; i-- {
+		for j := M - 1; j > 0; j-- {
 			if hor[i][j] > 0 {
 				edgeLength := int(math.Min(float64(hor[i][j]), float64(ver[i][j])))
 				upEdgeIdx := i - edgeLength + 1
 				if upEdgeIdx > -1 &&
-					ver[i][j - edgeLength + 1] >= edgeLength {
+					ver[i][j-edgeLength+1] >= edgeLength {
 					if edgeLength > max {
 						max = edgeLength
 					}
@@ -81,22 +81,20 @@ func printResult(nodes [][]int) {
 	fmt.Println("----------")
 }
 
-func TestCase1(t *testing.T)  {
+func TestCase1(t *testing.T) {
 	assert.Equal(t, maximalSubSquare([][]string{
-		{"1","1","1","0","0"},
-		{"1","0","1","1","1"},
-		{"1","1","1","1","1"},
-		{"1","0","0","1","0"},
+		{"1", "1", "1", "0", "0"},
+		{"1", "0", "1", "1", "1"},
+		{"1", "1", "1", "1", "1"},
+		{"1", "0", "0", "1", "0"},
 	}), 3)
 }
 
-func TestCase2(t *testing.T)  {
+func TestCase2(t *testing.T) {
 	assert.Equal(t, maximalSubSquare([][]string{
-		{"1","1","1","1","1"},
-		{"0","1","0","1","1"},
-		{"1","1","0","1","1"},
-		{"1","1","1","1","1"},
+		{"1", "1", "1", "1", "1"},
+		{"0", "1", "0", "1", "1"},
+		{"1", "1", "0", "1", "1"},
+		{"1", "1", "1", "1", "1"},
 	}), 4)
 }
-
-

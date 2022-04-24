@@ -3,7 +3,7 @@ package container_with_most_water
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func maxArea(height []int) int {

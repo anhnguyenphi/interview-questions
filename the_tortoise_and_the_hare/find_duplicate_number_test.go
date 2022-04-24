@@ -3,7 +3,7 @@ package the_tortoise_and_the_hare
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link: https://zhu45.org/posts/2017/Jun/18/the-tortoise-and-the-hare/

@@ -3,7 +3,7 @@ package greedy_algorithms
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/

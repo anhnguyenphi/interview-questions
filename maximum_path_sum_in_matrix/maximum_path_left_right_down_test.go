@@ -6,7 +6,7 @@ import (
 
 	"github.com/fannpa/interviewquestions/util"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // find a maximum path in 2d matrix (has negative number) that we can only move left and right 1 time and down 1 time

@@ -3,7 +3,7 @@ package count_pairs_with_diff_k
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func countPairsWithDiffK(arr []int, k int) [][]int {
@@ -15,14 +15,14 @@ func countPairsWithDiffK(arr []int, k int) [][]int {
 	result := make([][]int, 0)
 
 	for _, ele := range arr {
-		if _, ok := store[ele - k]; ok {
+		if _, ok := store[ele-k]; ok {
 			result = append(result, []int{ele - k, ele})
-			delete(store, ele - k)
+			delete(store, ele-k)
 		}
 
-		if _, ok := store[ele + k]; ok {
+		if _, ok := store[ele+k]; ok {
 			result = append(result, []int{ele + k, ele})
-			delete(store, ele + k)
+			delete(store, ele+k)
 		}
 
 		delete(store, ele)

@@ -3,7 +3,7 @@ package string_problems
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/

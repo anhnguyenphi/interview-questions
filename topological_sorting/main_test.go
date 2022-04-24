@@ -3,24 +3,24 @@ package topological_sorting
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link: https://www.geeksforgeeks.org/topological-sorting/
 
 type Graph struct {
-	V int
+	V   int
 	Adj [][]int
 }
 
 func NewGraph(v int) *Graph {
 	return &Graph{
-		V: v,
+		V:   v,
 		Adj: make([][]int, v),
 	}
 }
 
-func (g *Graph) AddEdge(v int, ws... int) {
+func (g *Graph) AddEdge(v int, ws ...int) {
 	for _, w := range ws {
 		g.Adj[v] = append(g.Adj[v], w)
 	}
@@ -45,7 +45,7 @@ func (g *Graph) topologicalSortUtil(v int, stack *[]int, visited *[]bool) {
 func (g *Graph) TopologicalSort() []int {
 	visited := make([]bool, g.V)
 	stack := make([]int, 0)
-	for i := 0 ; i < g.V; i++ {
+	for i := 0; i < g.V; i++ {
 		if !visited[i] {
 			g.topologicalSortUtil(i, &stack, &visited)
 		}
@@ -53,7 +53,7 @@ func (g *Graph) TopologicalSort() []int {
 
 	result := make([]int, len(stack))
 	for idx, ele := range stack {
-		result[len(stack) - idx - 1] = ele
+		result[len(stack)-idx-1] = ele
 	}
 	return result
 }

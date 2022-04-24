@@ -3,7 +3,7 @@ package sorting_algorithms
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // link: https://www.geeksforgeeks.org/quick-sort/

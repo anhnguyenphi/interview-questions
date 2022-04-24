@@ -3,7 +3,7 @@ package maximum_path_sum_in_matrix
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 
 	"github.com/fannpa/interviewquestions/util"
 )

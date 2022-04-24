@@ -3,37 +3,29 @@ package dynamic_programming
 import (
 	"testing"
 
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/jump-game-ii
 
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
 func jump(nums []int) int {
-	if len(nums) == 1 {
-		return 0
-	}
-
-	reach := make([]int, len(nums))
-	reach[0] = 0
-	min := 99999999
-	for i := 0; i < len(nums)-1; i++ {
-		if i != 0 && reach[i] == 0 {
-			continue
-		}
-		if nums[i]+i >= len(nums)-1 {
-			val := reach[i] + 1
-			if val < min {
-				min = val
+	steps := make([]int, len(nums))
+	for i := 0; i < len(nums); i++ {
+		for j := 1; j <= nums[i] && j+i < len(nums); j++ {
+			if steps[i+j] == 0 {
+				steps[i+j] = steps[i] + 1
+			} else {
+				steps[i+j] = min(steps[i]+1, steps[i+j])
 			}
 		}
-		for j := 1; j <= nums[i] && i+j < len(nums); j++ {
-			if reach[i+j] != 0 && reach[i+j] < reach[i]+1 {
-				continue
-			}
-			reach[i+j] = reach[i] + 1
-		}
 	}
-	return min
+	return steps[len(nums)-1]
 }
 
 func TestJump_1(t *testing.T) {
